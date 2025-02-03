@@ -10,6 +10,8 @@ const hostname = process.env.HOST_NAME
 app.set('views', path.join(__dirname, 'views')) // Nơi lưu trữ template engine
 app.set('view engine', 'ejs') // Sử dụng template engine là ejs
 
+app.use(express.static(path.join(__dirname, 'public'))) // Sử dụng static file
+
 // Khai báo route
 app.get('/', (req, res) => {
     res.send('Hello World!')
