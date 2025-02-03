@@ -1,9 +1,10 @@
 const express = require('express')
 const path = require('path')
-
+require('dotenv').config()
 
 const app = express() // app express
-const port = 3000 // port
+const port = process.env.PORT // port
+const hostname = process.env.HOST_NAME
 
 // config template engine
 app.set('views', path.join(__dirname, 'views')) // Nơi lưu trữ template engine
